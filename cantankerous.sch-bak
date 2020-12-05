@@ -1238,8 +1238,4 @@ Wire Wire Line
 Wire Wire Line
 	10950 3550 10850 3550
 Connection ~ 10850 3550
-Text Label 10750 3350 0    50   ~ 0
-CANH
-Text Label 10750 3550 0    50   ~ 0
-CANL
 $EndSCHEMATC
