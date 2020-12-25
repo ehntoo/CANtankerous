@@ -763,68 +763,10 @@ F 3 "" H 2550 1200 50  0001 C CNN
 	1    2550 1200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint TP1
-U 1 1 5FD841F7
-P 2850 1400
-F 0 "TP1" H 2908 1518 50  0000 L CNN
-F 1 "TestPoint" H 2908 1427 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.0mm" H 3050 1400 50  0001 C CNN
-F 3 "~" H 3050 1400 50  0001 C CNN
-	1    2850 1400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2250 1450 2550 1450
 Wire Wire Line
 	2550 1400 2550 1450
-Connection ~ 2550 1450
-Wire Wire Line
-	2550 1450 2850 1450
-Wire Wire Line
-	2850 1400 2850 1450
-$Comp
-L Connector:Conn_ST_STDC14 J1
-U 1 1 5FD94EF2
-P 2700 3250
-F 0 "J1" H 2257 3296 50  0000 R CNN
-F 1 "Conn_ST_STDC14" H 2257 3205 50  0000 R CNN
-F 2 "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical_SMD" H 2700 3250 50  0001 C CNN
-F 3 "https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/99/49/91/b6/b2/3a/46/e5/DM00526767/files/DM00526767.pdf/jcr:content/translations/en.DM00526767.pdf" V 2350 2000 50  0001 C CNN
-	1    2700 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3200 2750 3650 2750
-Text Label 3350 2750 0    50   ~ 0
-~RESET
-Wire Wire Line
-	3200 2950 3650 2950
-Text Label 3350 2950 0    50   ~ 0
-SWCLK
-Wire Wire Line
-	3200 3050 3650 3050
-Text Label 3350 3050 0    50   ~ 0
-SWDIO
-Wire Wire Line
-	3200 3150 3650 3150
-Text Label 3350 3150 0    50   ~ 0
-SWO
-NoConn ~ 3200 3250
-NoConn ~ 3200 3450
-Wire Wire Line
-	2700 2550 2700 2500
-$Comp
-L power:+3.3V #PWR0117
-U 1 1 5FDB7C8E
-P 2700 2500
-F 0 "#PWR0117" H 2700 2350 50  0001 C CNN
-F 1 "+3.3V" H 2715 2673 50  0000 C CNN
-F 2 "" H 2700 2500 50  0001 C CNN
-F 3 "" H 2700 2500 50  0001 C CNN
-	1    2700 2500
-	1    0    0    -1  
-$EndComp
 Text Label 4700 3150 0    50   ~ 0
 SWO
 Wire Wire Line
@@ -837,22 +779,6 @@ Text Label 4700 3550 0    50   ~ 0
 SWDIO
 Wire Wire Line
 	4700 3550 5150 3550
-Wire Wire Line
-	2600 3950 2700 3950
-Wire Wire Line
-	2600 3950 2600 4000
-Connection ~ 2600 3950
-$Comp
-L power:GND #PWR0118
-U 1 1 5FDCF23D
-P 2600 4000
-F 0 "#PWR0118" H 2600 3750 50  0001 C CNN
-F 1 "GND" H 2605 3827 50  0000 C CNN
-F 2 "" H 2600 4000 50  0001 C CNN
-F 3 "" H 2600 4000 50  0001 C CNN
-	1    2600 4000
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R_Small R3
 U 1 1 5FDCF4C4
@@ -983,14 +909,6 @@ Wire Wire Line
 	1800 1200 1800 1250
 Wire Wire Line
 	1800 1450 1800 1900
-Wire Wire Line
-	3200 3750 3650 3750
-Text Label 3350 3750 0    50   ~ 0
-LPC_TX
-Wire Wire Line
-	3200 3650 3650 3650
-Text Label 3350 3650 0    50   ~ 0
-LPC_RX
 Wire Wire Line
 	5150 5350 4700 5350
 Text Label 4700 5350 0    50   ~ 0
@@ -1323,4 +1241,65 @@ F 3 "" H 8700 3800 50  0001 C CNN
 $EndComp
 Text Notes 10600 5000 0    50   ~ 0
 CAN Transciever Decoupling
+$Comp
+L power:+3.3V #PWR05
+U 1 1 5FE67DC9
+P 3400 5250
+F 0 "#PWR05" H 3400 5100 50  0001 C CNN
+F 1 "+3.3V" H 3415 5423 50  0000 C CNN
+F 2 "" H 3400 5250 50  0001 C CNN
+F 3 "" H 3400 5250 50  0001 C CNN
+	1    3400 5250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3250 5250 3400 5250
+Text Label 3350 5150 0    50   ~ 0
+LPC_RX
+Wire Wire Line
+	3250 5150 3650 5150
+Text Label 3350 5050 0    50   ~ 0
+LPC_TX
+Wire Wire Line
+	3250 5050 3650 5050
+$Comp
+L power:GND #PWR04
+U 1 1 5FE80FE0
+P 3400 4950
+F 0 "#PWR04" H 3400 4700 50  0001 C CNN
+F 1 "GND" H 3405 4777 50  0000 C CNN
+F 2 "" H 3400 4950 50  0001 C CNN
+F 3 "" H 3400 4950 50  0001 C CNN
+	1    3400 4950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3250 4950 3400 4950
+Text Label 3350 4850 0    50   ~ 0
+SWDIO
+Wire Wire Line
+	3250 4850 3650 4850
+Text Label 3350 4750 0    50   ~ 0
+SWO
+Wire Wire Line
+	3250 4750 3650 4750
+$Comp
+L Connector_Generic:Conn_01x08 J1
+U 1 1 5FE9C218
+P 3050 4950
+F 0 "J1" H 2968 4325 50  0000 C CNN
+F 1 "Conn_01x08" H 2968 4416 50  0000 C CNN
+F 2 "soicbite:SOIC_clipProgSmall" H 3050 4950 50  0001 C CNN
+F 3 "~" H 3050 4950 50  0001 C CNN
+	1    3050 4950
+	-1   0    0    1   
+$EndComp
+Text Label 3350 4650 0    50   ~ 0
+SWCLK
+Text Label 3350 4550 0    50   ~ 0
+~RESET
+Wire Wire Line
+	3250 4650 3650 4650
+Wire Wire Line
+	3250 4550 3650 4550
 $EndSCHEMATC
